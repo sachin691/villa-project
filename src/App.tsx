@@ -5,19 +5,9 @@ import { useSelector } from "react-redux";
 // Local Files
 import NavBar from "./globalSubComponents/NavBar";
 import Home from "./components/Home/Home";
-import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
-import Pricing from "./components/Pricing/Pricing";
-import Services from "./components/Services/Services";
 import Auth from "./components/Auth/Auth";
-import Profile from "./components/Profile/Profile";
-import Blog from "./components/Blog/Blog";
-import Privacy from "./components/Privacy/Privacy";
 import Footer from "./globalSubComponents/Footer";
-import FrequentQuestion from "./globalSubComponents/FrequentQuestion";
-import CTA from "./globalSubComponents/CTA";
-import QuickContacts from "./globalSubComponents/QuickContacts";
-import ScrollToTop from "./globalSubComponents/ScrollToTop";
 import { RootState } from "./store/store";
 import HomeHero from "./globalAssets/HomeHero.jpg";
 import AboutHero from "./globalAssets/About.jpg";
@@ -26,7 +16,8 @@ import PricingHero from "./globalAssets/Prices.jpg";
 import ServiceHero from "./globalAssets/Services.jpg";
 import PrivacyHero from "./globalAssets/privacy.jpg";
 import PasswordReset from "./components/ForgetPassword/PasswordReset";
-
+import Property from "./components/Property/Property";
+import Details from "./components/PropertyDetails/Details";
 function App() {
   const curTab = useSelector((state: RootState) => state.curTab.value);
 
@@ -39,7 +30,7 @@ function App() {
       background += `,url(${HomeHero})`;
       break;
 
-    case "About":
+    case "Properties":
       className = "bg-no-repeat bg-top";
       background += `,url(${AboutHero})`;
       break;
@@ -47,26 +38,6 @@ function App() {
     case "Contact":
       className = "bg-no-repeat bg-top";
       background += `,url(${ContactHero})`;
-      break;
-
-    case "Pricing":
-      className = "bg-no-repeat bg-top";
-      background += `,url(${PricingHero})`;
-      break;
-
-    case "Services":
-      className = "bg-no-repeat bg-top";
-      background += `,url(${ServiceHero})`;
-      break;
-
-    case "Privacy":
-      className = "bg-no-repeat bg-top";
-      background += `,url(${PrivacyHero})`;
-      break;
-
-    case "Profile":
-      className = "bg-no-repeat bg-top";
-      background += `,url(${ServiceHero})`;
       break;
     default:
       break;
@@ -78,24 +49,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/Home" />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/Pricing" element={<Pricing />} />
           <Route path="/Auth" element={<Auth />} />
-          <Route path="/Services/*" element={<Services />} />
-          <Route path="/Profile" element={<Profile />} />
-          <Route path="/Blog/*" element={<Blog />} />
-          <Route path="/Privacy" element={<Privacy />} />
           <Route path="/ResetPassword" element={<PasswordReset />} />
           <Route path="*" element={<Navigate to="/Home" />} />
+          <Route path="/Properties" element={<Property />} />
+          <Route path="/Details" element={<Details />} />
         </Routes>
       </div>
-      {curTab === "Auth" || curTab === "Password Reset" ? null : (
-        <CTA text="❝ We Care for your Brand as Passionately as You Do. ❞" color="warning" showArrow={false} />
-      )}
       {curTab === "Auth" || curTab === "Password Reset" ? null : <Footer />}
-      {curTab === "Auth" || curTab === "Password Reset" ? null : <QuickContacts />}
-      {curTab === "Auth" || curTab === "Password Reset" ? null : <ScrollToTop />}
     </>
   );
 }
