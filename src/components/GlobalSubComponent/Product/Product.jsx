@@ -1,5 +1,5 @@
-import React from "react";
 import p1 from "./assets/villa.jpg";
+import { Button, Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 
 const content = [
   {
@@ -67,58 +67,53 @@ const content = [
 const Product = () => {
   return (
     <>
-      <div className="p-[2rem] xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-2 gap-6 flex flex-col">
-        {content.map((e) => (
-          <div className="flex flex-col justify-between items-center h-auto w-auto p-[1rem] rounded-xl  bg-orange-100">
-            <div className="rounded-xl p-[1rem]">
-              <img alt="productImage" className="h-[15rem] w-[22rem] rounded-xl" src={p1} />
-            </div>
-            <div className="flex flex-row  justify-evenly items-center gap-4">
-              <div className="bg-pink-200 py-[0.5rem] rounded-xl p-[1rem] px-[2rem]">
-                <h1 className="text-red-500 font-bold text-1xl font-serif">{e.villa}</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-[2rem]">
+        {content.map((e, index) => (
+          <Card shadow="sm" key={index}>
+            <CardBody className="flex flex-col gap-5 overflow-visible p-0">
+              <Image
+                shadow="sm"
+                radius="lg"
+                width="100%"
+                alt={e.title}
+                className="w-full object-cover h-[15rem]"
+                src={p1}
+              />
+              <div className="flex flex-row justify-evenly items-center gap-4">
+                <div className="bg-pink-200 py-[0.5rem] rounded-xl p-[1rem] px-[2rem]">
+                  <h1 className="text-red-500 font-bold text-1xl font-serif">{e.villa}</h1>
+                </div>
+                <div className="py-[1rem] px-[2rem]">
+                  <h1 className="text-red-500 font-bold text-1xl font-serif">{e.price}</h1>
+                </div>
               </div>
-              <div className="py-[1rem] px-[2rem]">
-                <h1 className="text-red-500 font-bold text-1xl font-serif">{e.price}</h1>
-              </div>
-            </div>
-            <div className="px-[1rem]">
-              <h2 className="md:text-[1.2rem] text-1xl font-serif font-semibold text-black text-center">{e.Adress}</h2>
-            </div>
-            <div className="grid grid-cols-2  py-[1rem] border-b-2 border-gray-500 ">
-              <div className="sm:px-[1rem] px-[1rem]">
-                <h3 className=" font-normal md:text-[1.2rem] text-1xl">
+              <h2 className="px-[1rem] md:text-[1.2rem] text-1xl font-serif font-semibold text-black text-center">
+                {e.Adress}
+              </h2>
+              <div className="grid grid-cols-2 gap-1 py-[1rem] px-[2rem] border-b-2 border-gray-500 ">
+                <h3 className="font-normal md:text-[1.2rem] text-1xl">
                   Bedrooms: <span className="text-black md:text-[1.2rem] font-bold">{e.bedroom}</span>
                 </h3>
-              </div>
-              <div className="sm:px-[2rem] px-[1rem]">
-                <h3 className="font-normal md:text-[1.2rem] text-1xl">
+                <h3 className="font-normal md:text-[1.2rem] text-xl">
                   Bathroom: <span className="text-black md:text-[1.2rem] font-bold">{e.bathroom}</span>
                 </h3>
-              </div>
-              <div className="sm:px-[1rem] px-[1rem]">
-                <h3 className="font-normal md:text-[1.2rem] text-1xl">
+                <h3 className="font-normal md:text-[1.2rem] text-xl">
                   Area: <span className="text-black md:text-[1.2rem] font-bold">{e.area}</span>
                 </h3>
-              </div>
-              <div className="sm:px-[2.5rem] px-[1rem]">
-                <h3 className=" font-normal md:text-[1.2rem] text-1xl">
+                <h3 className=" font-normal md:text-[1.2rem] text-xl">
                   Floor: <span className="text-black md:text-[1.2rem] font-bold">{e.floor}</span>
                 </h3>
-              </div>
-              <div className="sm:px-[1rem] px-[1rem]">
-                <h3 className=" font-normal md:text-[1.2rem] text-1xl">
+                <h3 className=" font-normal md:text-[1.2rem] text-xl">
                   Parking: <span className="text-black md:text-[1.2rem] font-bold">{e.parking}</span>
                 </h3>
               </div>
-            </div>
-
-            {/* submit */}
-            <div className="p-[2rem]">
-              <div className="py-[1rem] px-[3rem] font-semibold bg-black text-white rounded-full">
-                <button>Schedule a Visit</button>
-              </div>
-            </div>
-          </div>
+            </CardBody>
+            <CardFooter className="text-small justify-center p-[1.5rem]">
+              <Button className="" size="lg" variant="bordered" color="danger">
+                Schedule Visit
+              </Button>
+            </CardFooter>
+          </Card>
         ))}
       </div>
     </>
