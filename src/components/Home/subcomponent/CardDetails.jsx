@@ -5,7 +5,7 @@ const items = [
 ];
 const CardDetails = () => {
   return (
-    <div className="h-[35rem] md:h-[35rem] flex flex-col md:flex-row gap-[2rem] md:gap-[6rem] xl:gap-[8rem] items-center md:items-start md:justify-center bg-white">
+    <div className="h-[35rem] md:h-[25rem] flex flex-col md:flex-row gap-[2rem] md:gap-[6rem] xl:gap-[8rem] items-center md:items-start md:justify-center bg-white">
       {items.map((item, index) => (
         <div
           key={index}
