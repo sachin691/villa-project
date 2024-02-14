@@ -69,7 +69,7 @@ const Product = () => {
     <>
       <div className="p-[2rem] xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-2 gap-6 flex flex-col">
         {content.map((e) => (
-          <div className="flex flex-col justify-between items-center h-auto w-auto p-[1rem] rounded-xl  bg-gray-100">
+          <div className="flex flex-col justify-between items-center h-auto w-auto p-[1rem] rounded-xl  bg-orange-100">
             <div className="rounded-xl p-[1rem]">
               <img alt="productImage" className="h-[15rem] w-[22rem] rounded-xl" src={p1} />
             </div>
