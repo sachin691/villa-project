@@ -121,13 +121,6 @@ const NavBar = () => {
             </Link>
           </NavbarItem>
         </NavbarContent>
-        {isLoggedIn ? (
-          <NavbarContent justify="end">
-            <NavbarItem>
-              <UserAvatar />
-            </NavbarItem>
-          </NavbarContent>
-        ) : (
           <NavbarContent justify="end">
             <NavbarItem className="hidden lg:flex">
               <ButtonElement
@@ -152,7 +145,6 @@ const NavBar = () => {
               />
             </NavbarItem>
           </NavbarContent>
-        )}
 
         <NavbarMenu className="mt-[1rem] bg-[rgba(0,0,0,0.4)] z-[200]">
           {menuItems.map((item, index) => {
