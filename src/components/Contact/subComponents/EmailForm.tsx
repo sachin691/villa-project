@@ -126,10 +126,10 @@ const EmailForm = () => {
         </p>
         <ContactCard />
       </div>
-      <Card className="bg-white p-4 mt-[5rem]">
+      <Card className="bg-white p-4 mt-[5rem] shadow-inner">
         <CardBody>
           <h1 className="text-center font-bold text-2xl text-black font-serif p-5">Contact Us</h1>
-          <form className="flex flex-col gap-[2rem] items-center grow" ref={form} onSubmit={sendEmail}>
+          <form className="flex flex-col gap-[2rem] items-center grow " ref={form} onSubmit={sendEmail}>
             <Input
               radius="full"
               variant="bordered"

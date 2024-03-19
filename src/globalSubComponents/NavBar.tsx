@@ -1,38 +1,21 @@
-// Dependencies
-import {
-  Navbar,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-  NavbarBrand,
-  Divider,
-} from "@nextui-org/react";
+import React from "react";
+import { Navbar, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
-import { FaLocationDot } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa6";
-import { FaSquareFacebook } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa6";
-
-// Local Files
-import "./NavBar.css";
+import { FaPhone } from "react-icons/fa";
+// import { getCookie } from "../utils/cookies";
 import { RootState } from "../store/store";
 import { updateNavStatus } from "../store/navOpenStatusSlice";
-import { updateToLoginStatus } from "../store/toLoginSlice";
-import ButtonElement from "../globalElements/ButtonElement";
-import UserAvatar from "./UserAvatar";
-import { getCookie } from "../utils/cookies";
-const menuItems = ["Homee", "About", "Contact", "Log In"];
+// import { updateToLoginStatus } from "../store/toLoginSlice";
+import "./NavBar.css";
 
 const NavBar = () => {
-  const isLoggedIn = getCookie("token") ? true : false;
+  // const isLoggedIn = getCookie("token") ? true : false;
   const curTab = useSelector((state: RootState) => state.curTab.value);
   const navOpenStatus = useSelector((state: RootState) => state.navOpenStatus.value);
   const dispatch = useDispatch();
+
   return (
     <>
       <Navbar
@@ -51,21 +34,6 @@ const NavBar = () => {
               <span className="text-zinc-500 text-md">support@villa.com</span>
             </div>
           </NavbarItem>
-          <Divider orientation="vertical" />
-          <NavbarItem>
-            <div className="flex flex-row gap-2">
-              <FaLocationDot className="text-orange-500 mt-1" size={17} />
-              <span className="text-zinc-500 text-md">Sunny Isles Beach, FL 33160</span>
-            </div>
-          </NavbarItem>
-        </NavbarContent>
-        <NavbarContent className="hidden lg:flex" justify="center">
-          <div className="flex flex-row gap-x-4 cursor-pointer">
-            <FaInstagram size={18} className="text-zinc-400" />
-            <FaSquareFacebook size={18} className="text-zinc-400" />
-            <FaLinkedin size={18} className="text-zinc-400" />
-            <FaTwitter size={18} className="text-zinc-400" />
-          </div>
         </NavbarContent>
       </Navbar>
       <Navbar
@@ -77,15 +45,11 @@ const NavBar = () => {
         maxWidth="xl"
       >
         <NavbarContent>
-          <NavbarMenuToggle aria-label={navOpenStatus ? "Close menu" : "Open menu"} className="lg:hidden text-black" />
-          <NavbarBrand className="order-1 hidden lg:flex">
+          <NavbarItem>
             <Link to="/" className="font-bold text-inherit font-serif text-2xl text-black">
               VILLA.COM
             </Link>
-          </NavbarBrand>
-        </NavbarContent>
-        <NavbarContent className="lg:hidden logo font-serif">
-          <Link to="../Home">VILLA.COM</Link>
+          </NavbarItem>
         </NavbarContent>
         <NavbarContent className="hidden lg:flex" justify="center">
           <NavbarItem>
@@ -121,49 +85,21 @@ const NavBar = () => {
             </Link>
           </NavbarItem>
         </NavbarContent>
-          <NavbarContent justify="end">
-            <NavbarItem className="hidden lg:flex">
-              <ButtonElement
-                to="../Auth"
-                variant="bordered"
-                label="Login"
-                radius="sm"
-                size="md"
-                className="w-full px-[8px] py-[10px]  text-black"
-                onClickFunction={() => dispatch(updateToLoginStatus(true))}
-              />
-            </NavbarItem>
-            <NavbarItem>
-              <ButtonElement
-                to="../Auth"
-                size="md"
+        <NavbarContent justify="end">
+          <NavbarItem>
+            <a className="flex gap-[1rem]" href="tel:+1 (844) 671-7473">
+              <Button
+                startContent={<FaPhone />}
                 variant="solid"
-                label="Sign Up"
-                radius="sm"
-                className="w-full px-[8px] py-[10px] bg-orange-500 text-white"
-                onClickFunction={() => dispatch(updateToLoginStatus(false))}
-              />
-            </NavbarItem>
-          </NavbarContent>
-
-        <NavbarMenu className="mt-[1rem] bg-[rgba(0,0,0,0.4)] z-[200]">
-          {menuItems.map((item, index) => {
-            return (
-              <NavbarMenuItem key={`${item}-${index}`}>
-                <Link
-                  className={curTab === item ? "active" : "notActive"}
-                  to={index === 6 ? "../Auth" : `../${item}`}
-                  onClick={() => {
-                    dispatch(updateNavStatus(!navOpenStatus));
-                    dispatch(updateToLoginStatus(item === "Log In" ? true : false));
-                  }}
-                >
-                  {item}
-                </Link>
-              </NavbarMenuItem>
-            );
-          })}
-        </NavbarMenu>
+                color="warning"
+                className="text-white hover:scale-110 bg-[#0a97b0]"
+                radius="none"
+              >
+                Call Us
+              </Button>
+            </a>
+          </NavbarItem>
+        </NavbarContent>
       </Navbar>
     </>
   );

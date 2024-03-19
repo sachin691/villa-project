@@ -1,6 +1,6 @@
-import First from "./assets/bi.jpg";
-import Second from "./assets/yu.jpg";
-import Third from "./assets/gi.jpg";
+import First from "./assets/first (1).jpg";
+import Second from "./assets/first (2).jpg";
+import Third from "./assets/first (3).jpg";
 
 export default [
   {
@@ -18,6 +18,4 @@ export default [
     description: "GET THE HIGHEST LEVEL PENTHOUSE",
     urls: Third,
   },
-  
-  
 ];
