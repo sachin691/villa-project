@@ -1,11 +1,11 @@
 // Dependencies
-import { Divider, Image, Button, Listbox, ListboxItem } from "@nextui-org/react";
+import { Divider, Button, Listbox, ListboxItem } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 import { SiFacebook } from "react-icons/si";
 import { TbBrandYoutubeFilled } from "react-icons/tb";
 import { FaSquareXTwitter, FaPhone } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
-import { FaPinterest } from "react-icons/fa";
+// import { FaPinterest } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
 
@@ -119,18 +119,9 @@ const Footer = () => {
         <div className="">
           <h1 className="text-xl font-bold text-[#F5A524] text-center md:text-start">About us</h1>
           <p className="text-center md:text-start">
-            Villa.com is your premier destination for exquisite villa rentals and vacation experiences worldwide. We
-            specialize in curating unforgettable stays in luxurious villas, offering a handpicked selection of
-            properties that cater to discerning travelers seeking privacy, comfort, and unparalleled hospitality. With a
-            focus on delivering exceptional villa experiences, Villa.com provides a seamless booking platform where
-            guests can discover and reserve their dream vacation home with ease. Whether you're planning a romantic
-            getaway, a family reunion, or a group retreat, our portfolio of stunning villas ensures that every stay is
-            nothing short of extraordinary. Committed to exceeding our guests' expectations, Villa.com combines
-            personalized service with cutting-edge technology to enhance every aspect of the booking process. Our team
-            of dedicated professionals is passionate about creating unforgettable memories for our guests, ensuring that
-            each villa experience is tailored to your unique preferences and needs. Experience the epitome of luxury and
-            relaxation with Villa.com. Discover your perfect villa retreat and embark on a journey of unparalleled
-            comfort and indulgence.
+            Discover unparalleled luxury with Villa.com. From romantic getaways to family reunions, our handpicked
+            villas offer privacy, comfort, and exceptional hospitality. With seamless booking and personalized service,
+            your dream vacation is just a click away. Experience the epitome of relaxation with Villa.com.
           </p>
         </div>
         <div className="flex flex-col lg:flex-row">

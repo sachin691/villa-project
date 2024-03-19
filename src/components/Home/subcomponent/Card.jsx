@@ -29,14 +29,13 @@ const Card = () => {
           </div>
           <div className="h-[20rem] md:h-[27rem] w-[20rem] sm:w-[35rem] md:w-[45rem] xl:w-[60rem] absolute top-[18rem] md:top-[16rem] xl:top-[15rem] rounded-lg z-50 border-2">
             <iframe
-              src="https://jumpshare.com/embed/sSUGaOTjUNYfbE44oHBJ"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              webkitallowfullscreen
-              mozallowfullscreen
-              className=" rounded-lg h-full w-full "
-              title="none"
-            />
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/2xa5SR_B65M?si=-oTMtHR27alGUNL1&amp;start=39&amp;autoplay=1&amp;mute=1"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </div>

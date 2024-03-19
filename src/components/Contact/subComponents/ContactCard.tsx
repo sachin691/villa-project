@@ -18,9 +18,9 @@ const ContactCard = () => {
   return (
     <>
       {data.map((item, index) => (
-        <Card key={index} className="min-w-[40%] h-[8rem] p-3 bg-white text-orange-500 justify-center m-3 mt-5">
+        <Card key={index} className="min-w-[40%] h-[5rem]  bg-white text-orange-500 justify-center m-3 ">
           <CardHeader className="flex gap-3">
-            <item.icon radius="sm" size={50} className="mt-2" />
+            <item.icon radius="sm" size={50} className="" />
             <div className="flex flex-col">
               <p className="text-md">{item.text}</p>
               <p className="text-small text-default-500 text-center">{item.heading}</p>
