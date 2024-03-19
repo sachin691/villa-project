@@ -9,17 +9,18 @@ const CardDetails = () => {
       {items.map((item, index) => (
         <div
           key={index}
-          className="h-[5.5rem] w-[13rem] lg:h-[7rem] lg:w-[17rem] bg-pink-200 rounded-lg relative"
+          className="h-[5.5rem] w-[13rem] lg:h-[7rem] lg:w-[17rem] bg-orange-100 rounded-lg relative"
           style={{ top: item.top }}
         >
-          <div className="flex flex-row items-center justify-between">
-            <div className="text-red-500 font-bold font-serif lg:text-3xl md:text-xl p-4">
-              <h1>{item.number}</h1>
+          <div className="flex flex-row justify-center items-center space-x-1">
+            <div className="text-red-500 font-bold font-serif lg:text-1xl pt-9 md:text-lg p-1 flex items-center">
+              <h1 className="text-center">{item.number}</h1>
             </div>
-            <div className="text-black font-serif font-bold lg:text-[1.1rem] md:text-[1xl] p-4">
-              <h3>{item.title}</h3>
+            <div className="text-black font-serif font-bold lg:text-[1.1rem] pt-10 md:text-2xl p-1 flex items-center">
+              <h3 className="text-center">{item.title}</h3>
             </div>
           </div>
+
           <div className="absolute h-[2rem] w-[2rem] bg-red-500 rounded-full right-[-1rem] top-[-1rem]"></div>
         </div>
       ))}

@@ -3,7 +3,7 @@ import { Navbar, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
-import { FaPhone } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 // import { getCookie } from "../utils/cookies";
 import { RootState } from "../store/store";
 import { updateNavStatus } from "../store/navOpenStatusSlice";
@@ -89,10 +89,11 @@ const NavBar = () => {
           <NavbarItem>
             <a className="flex gap-[1rem]" href="tel:+1 (844) 671-7473">
               <Button
-                startContent={<FaPhone />}
+                startContent={<FaPhoneAlt className="transform rotate-100" />}
                 variant="solid"
                 color="warning"
-                className="text-white hover:scale-110 bg-[#0a97b0]"
+                className="text-black hover:scale-110"
+                style={{ backgroundColor: "rgb(255, 237, 213)" }}
                 radius="none"
               >
                 Call Us
