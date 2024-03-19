@@ -1,4 +1,4 @@
-import p1 from "./assets/villa.jpg";
+// import p1 from "./assets/villa.jpg";
 import { Button, Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 
 const content = [
@@ -76,48 +76,46 @@ const images = [
 const Product = () => {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-[2rem]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
         {content.map((e, index) => (
-          <Card shadow="sm" key={index}>
+          <Card shadow="sm" key={index} className="w-full">
             <CardBody className="flex flex-col gap-5 overflow-visible p-0">
               <Image
                 shadow="sm"
                 radius="lg"
                 width="100%"
                 alt={e.villa}
-                className="w-full object-cover h-[15rem]"
+                className="w-full object-cover md:h-72 lg:h-80"
                 src={images[index % images.length]} // Use modulus operator to cycle through images
               />
               <div className="flex flex-row justify-evenly items-center gap-4">
-                <div className="bg-pink-200 py-[0.5rem] rounded-xl p-[1rem] px-[2rem]">
-                  <h1 className="text-red-500 font-bold text-1xl font-serif">{e.villa}</h1>
+                <div className="bg-pink-200 py-2 px-4 rounded-xl">
+                  <h1 className="text-red-500 font-bold text-lg font-serif">{e.villa}</h1>
                 </div>
-                <div className="py-[1rem] px-[2rem]">
-                  <h1 className="text-red-500 font-bold text-1xl font-serif">{e.price}</h1>
+                <div className="py-2 px-4">
+                  <h1 className="text-red-500 font-bold text-lg font-serif">{e.price}</h1>
                 </div>
               </div>
-              <h2 className="px-[1rem] md:text-[1.2rem] text-1xl font-serif font-semibold text-black text-center">
-                {e.Adress}
-              </h2>
-              <div className="grid grid-cols-2 gap-1 py-[1rem] px-[2rem] border-b-2 border-gray-500 ">
-                <h3 className="font-normal md:text-[1.2rem] text-1xl">
-                  Bedrooms: <span className="text-black md:text-[1.2rem] font-bold">{e.bedroom}</span>
+              <h2 className="px-4 text-lg font-semibold text-black text-center">{e.Adress}</h2>
+              <div className="grid grid-cols-2 gap-1 py-4 px-4 border-b-2 border-gray-500 ">
+                <h3 className="font-normal text-lg">
+                  Bedrooms: <span className="text-black font-bold">{e.bedroom}</span>
                 </h3>
-                <h3 className="font-normal md:text-[1.2rem] text-xl">
-                  Bathroom: <span className="text-black md:text-[1.2rem] font-bold">{e.bathroom}</span>
+                <h3 className="font-normal text-lg">
+                  Bathroom: <span className="text-black font-bold">{e.bathroom}</span>
                 </h3>
-                <h3 className="font-normal md:text-[1.2rem] text-xl">
-                  Area: <span className="text-black md:text-[1.2rem] font-bold">{e.area}</span>
+                <h3 className="font-normal text-lg">
+                  Area: <span className="text-black font-bold">{e.area}</span>
                 </h3>
-                <h3 className=" font-normal md:text-[1.2rem] text-xl">
-                  Floor: <span className="text-black md:text-[1.2rem] font-bold">{e.floor}</span>
+                <h3 className="font-normal text-lg">
+                  Floor: <span className="text-black font-bold">{e.floor}</span>
                 </h3>
-                <h3 className=" font-normal md:text-[1.2rem] text-xl">
-                  Parking: <span className="text-black md:text-[1.2rem] font-bold">{e.parking}</span>
+                <h3 className="font-normal text-lg">
+                  Parking: <span className="text-black font-bold">{e.parking}</span>
                 </h3>
               </div>
             </CardBody>
-            <CardFooter className="text-small justify-center p-[1.5rem]">
+            <CardFooter className="text-small justify-center p-6">
               <Button className="" size="lg" variant="bordered" color="danger">
                 Schedule Visit
               </Button>

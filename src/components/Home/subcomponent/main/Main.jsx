@@ -13,7 +13,7 @@ const Main = () => {
             </div>
           </div>
           <div>
-            <h1 className="font-serif md:text-5xl text-5xl text-center font-bold text-black">
+            <h1 className="font-serif md:text-5xl text-5xl text-center font-bold  text-black">
               We provide the Best Property You Like
             </h1>
           </div>
